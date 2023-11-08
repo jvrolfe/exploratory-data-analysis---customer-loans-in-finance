@@ -1,12 +1,11 @@
 import yaml
 from sqlalchemy import create_engine
 
-
-
 def load_creds(file_path):
     with open(file_path, "r") as file:
         creds = yaml.safe_load(file)
     return creds
+
 class RDSDatabaseConnector:
     def __init__(self, db_creds):
         self.db_creds = db_creds
@@ -25,8 +24,10 @@ class RDSDatabaseConnector:
     def save_to_csv(self, data, file_path):
         data.to_csv(file_path, index=False)
 
-creds = load_creds("credentials.yaml")
-db_connect = RDSDatabaseConnector(creds)
-db_connect.db_engine()
-data = db_connect.db_extraction()
-db_connect.save_to_csv(data, "loan_payments_data.csv")
+
+if __name__ == "__main__": 
+    creds = load_creds("credentials.yaml")
+    db_connect = RDSDatabaseConnector(creds)
+    db_connect.db_engine()
+    data = db_connect.db_extraction()
+    db_connect.save_to_csv(data, "loan_payments_data.csv")
