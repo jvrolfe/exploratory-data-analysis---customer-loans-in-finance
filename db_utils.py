@@ -1,12 +1,39 @@
-import yaml
+from yaml import safe_load
 from sqlalchemy import create_engine
 
 def load_creds(file_path):
+    '''
+    This function is used to load in a yaml file containing the 
+    credentials required to access a database.
+    
+    Parameters:
+    file_path (str): The file path of the yaml file containing 
+    the credentials. 
+    
+    Attributes:
+    creds (dict): A dictionary of the credentials. 
+    
+    Returns:
+    creds(dict)
+    '''
     with open(file_path, "r") as file:
         creds = yaml.safe_load(file)
     return creds
 
 class RDSDatabaseConnector:
+    '''
+    This class is used to connect to the desired database. 
+    
+    Paramters:
+    db_creds (dict): A dictionary of the credentials.
+    
+    Methods:
+    db_engine(): Creates an SQLalchemy engine that interprets the database.
+    db_extraction(): Connects to and queries the database to extract
+    the loan_payments table.
+    sav_to_csv(data, file_path): Saves the queried data to a csv file. 
+    '''
+    
     def __init__(self, db_creds):
         self.db_creds = db_creds
 
