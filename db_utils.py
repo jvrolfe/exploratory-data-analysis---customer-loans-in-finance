@@ -1,5 +1,5 @@
-from yaml import safe_load
 from sqlalchemy import create_engine
+from yaml import safe_load
 
 def load_creds(file_path):
     '''
