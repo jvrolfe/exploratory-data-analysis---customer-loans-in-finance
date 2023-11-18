@@ -2,6 +2,9 @@
 
 In this project, I have explored a loan payments database to generate exploratory data analysis, and pull together learning content up to this point. This was done as part of the AiCore Data Analytics pathway content. [Exploratory data analysis](https://en.wikipedia.org/wiki/Exploratory_data_analysis) is an approach commonly used in data analysis to summarise key characteristics of a dataset. 
 
+Here, I have created a set of classes that are able to perform all of the key steps in EDA. Then, I have taken a loan payments dataset and described each step of the EDA process as I have performed them. 
+
+Throughout this process, I have gained a better understanding of the important factors of EDA and have appreciated that there is no blueprint for the "perfect" EDA, but rather it is the reasoning behind your decisions that are the most important factor. 
 
 ## Requirements
 
@@ -20,7 +23,14 @@ In this project, I have explored a loan payments database to generate explorator
     - __`__init__()`__: This intialises the main variables of the class. It one parameter along with self:
         - `db_creds` (dict): A dictionary containing the credentials required to access the appropriate database.
 
+**loan_data_dict.md**: This file contains the definitions of all the columns in the dataset. 
 
+**loans.ipynb**: This module contains all the classes needed to analyse the dataset, alongside a walkthtough of analysing the data with markdown cells. There are five classes within the file (see the DocString for more information): 
+- __`DataTransform`__: With this class, simple columns transformations can be performed. 
+- __`DistributionChecker`__: With this class, the distribution of columns can be assessed. 
+- __`DataFrameInfo`__: Summary statistics on the dataframe can be performed. 
+- __`Plotter`__: This class contains methods to plot the data in different ways.
+- __`DataFrameTransform`__: This class contains a set of methods to transform the data in different ways e.g null imputations and log transformations.
 
 ## Installation
 
