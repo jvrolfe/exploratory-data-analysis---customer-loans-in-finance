@@ -1,5 +1,6 @@
 from sqlalchemy import create_engine
 from yaml import safe_load
+import pandas as pd
 
 def load_creds(file_path):
     '''
@@ -17,7 +18,7 @@ def load_creds(file_path):
     creds(dict)
     '''
     with open(file_path, "r") as file:
-        creds = yaml.safe_load(file)
+        creds = safe_load(file)
     return creds
 
 class RDSDatabaseConnector:
