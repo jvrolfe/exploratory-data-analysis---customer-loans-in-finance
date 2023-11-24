@@ -14,6 +14,11 @@ Throughout this process, I have gained a better understanding of the important f
 
 ## Usage
 
+To use this jupyter notebook, open it and load in your own data. 
+
+Once you have done this, you can use the classes and methods show to work through you analysis. I have provided my own reasoning for my dataset, so feel free to use this as a guide. 
+
+Uncomment lines as necessary when describing the dataset. 
 
 ## File Structure 
 
@@ -31,6 +36,8 @@ Throughout this process, I have gained a better understanding of the important f
 - __`DataFrameInfo`__: Summary statistics on the dataframe can be performed. 
 - __`Plotter`__: This class contains methods to plot the data in different ways.
 - __`DataFrameTransform`__: This class contains a set of methods to transform the data in different ways e.g null imputations and log transformations.
+
+For more information on each of these, please see the docstrings in the jupyter notebook. 
 
 ## Installation
 
