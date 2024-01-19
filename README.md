@@ -30,14 +30,54 @@ Uncomment lines as necessary when describing the dataset.
 
 **loan_data_dict.md**: This file contains the definitions of all the columns in the dataset. 
 
-**loans.ipynb**: This module contains all the classes needed to analyse the dataset, alongside a walkthtough of analysing the data with markdown cells. There are five classes within the file (see the DocString for more information): 
-- __`DataTransform`__: With this class, simple columns transformations can be performed. 
-- __`DistributionChecker`__: With this class, the distribution of columns can be assessed. 
-- __`DataFrameInfo`__: Summary statistics on the dataframe can be performed. 
-- __`Plotter`__: This class contains methods to plot the data in different ways.
-- __`DataFrameTransform`__: This class contains a set of methods to transform the data in different ways e.g null imputations and log transformations.
+**load.py**: This module contains the function for loading the csv file. 
 
-For more information on each of these, please see the docstrings in the jupyter notebook. 
+**dataframeinfo.py**: This module contains the class defining methods to describe the dataframe:
+- stats_overview - gives a statistical overview of the data.
+- datatypes - returns the datatypes. 
+- category_count - returns a count for each categorical column.
+- null_count_percent - returns the null percentage for each column. 
+
+**data_transform.py**: This module contains the class defining methods to transform the data after loading:
+- extract_int - extracts numerical values from string columns. 
+- to_date_column - converts date columsn to the correct date type. 
+- to_cat_column - converts a column to categorical datatype.
+
+**plotter.py**: This module contains the class defining methods to plot the data:
+- histogram - creates a histogram.
+- q_q_plot - creates a qq plot.
+- box_plot -creates a box plot. 
+- bar_plot - creates a bar plot. 
+
+**transform.py**: This module contains the class defining methods to apply more complex transformations to the dataframe:
+- impute_with_mean - imputes null values with the mean.
+- impute_with_median - imputes null values with the median.
+- drop_null_rows - drops null values.
+- replace_nulls - replaces null values with a given value.
+- identify_skewed_columns - rturns the skew values for all columns.
+- transform_log - applies a log transformation to skewed columns. 
+- identify_outliers_IQR - identifies outliers using the IQR method. 
+- identify_outliers_IQR_all_columns - identifies outliers in all columns. 
+- outlier_count_per_column - gives the outlier count per column.
+- remove_outliers - removes outliers from columns in a given list. 
+- identify_correlated_columns - applies the perason correlation method to all   
+    columns in the dataframe. Generates a heatmap to show the correlation.
+- encode_categorical_columns - encodes categorical data to be 
+    used in a correlation matrix. 
+
+**loans.ipynb**: This file is where the analysis will be run. All of the modules are imported, along with any key packages. 
+
+For more information on each of these, please see the docstrings in the module files. 
+
+
+## Example Plots
+
+Bar plot showing the number of loans predicted to be paid off in the next 6 months:
+![Alt text](Images/bar_plot.png)
+
+
+Correlation matrix:
+![Alt text](Images/corr.png)
 
 ## Installation
 

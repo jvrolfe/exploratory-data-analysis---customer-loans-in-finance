@@ -18,7 +18,7 @@ class DataFrameTransform:
     Methods:
     impute_with_mean(column_list): Imputes null values with the mean 
         of the column for a list of given columns.
-    impute_with_median(column_list): Imputes null values with the mean 
+    impute_with_median(column_list): Imputes null values with the median
         of the column for a list of given columns.
     drop_null_rows(column_list): Drops null values in given columns.
     replace_nulls(column_list, val): Replaces null values with a given value
@@ -33,7 +33,7 @@ class DataFrameTransform:
         columns through a threshold in columns using the IQR method. 
     outlier_count_per_column(threshold): Gives the outlier count per column.
     remove_outliers(threshold): Removes outliers from columns in a given list. 
-    identify_correlated_columns(); Applies the perason correlation method to 
+    identify_correlated_columns(): Applies the perason correlation method to 
         all columns in the dataframe. Generates a heatmap to show the 
         correlation.
     encode_categorical_columns(column_list); Encodes categorical data to be 
