@@ -1,5 +1,11 @@
 import numpy as np
+from matplotlib import pyplot as plt
+import seaborn as sns
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import accuracy_score
+from statsmodels.graphics.gofplots import qqplot
 
+from xgboost import XGBClassifier
 
 class DataFrameTransform:
     '''
