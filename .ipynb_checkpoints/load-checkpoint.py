@@ -1,12 +1,13 @@
 import pandas as pd
 from matplotlib import pyplot as plt
+import numpy as np  
+from scipy.stats import normaltest
 import seaborn as sns
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score
 from statsmodels.graphics.gofplots import qqplot
 import statsmodels.formula.api as smf
 from xgboost import XGBClassifier
-
 
 def load_data(file_path):
     '''
